@@ -1,0 +1,60 @@
+/* Скрываем граф на всех устройствах */
+.graph, 
+#graph-container, 
+.graph-container,
+h3:has(span:contains("Вид графа")),
+div:has(> h3:has(span:contains("Вид графа"))) {
+    display: none !important;
+}
+
+/* Изменяем футер */
+footer p {
+    font-size: 0;
+}
+footer p:after {
+    content: "© 2025 Разработка: Almas Kasymzhanov";
+    font-size: 16px;
+    display: block;
+    text-align: center;
+}
+
+/* Стилизация мобильной версии */
+@media (max-width: 768px) {
+    /* Улучшаем внешний вид поиска */
+    #search-container {
+        background-color: rgba(32, 32, 34, 0.8) !important;
+        border-radius: 8px !important;
+        padding: 8px 12px !important;
+        margin: 0.5rem 0 !important;
+    }
+    
+    /* Выравнивание содержимого */
+    main {
+        padding: 0 1rem !important;
+    }
+    
+    article {
+        padding: 1rem 0 !important;
+    }
+    
+    /* Убираем лишние поля вокруг навигации */
+    .page-header {
+        margin-bottom: 1rem !important;
+    }
+    
+    /* Улучшаем отображение списка страниц */
+    .section-ul {
+        padding-left: 1rem !important;
+    }
+}
+
+/* Дополнительные улучшения для мобильной навигации */
+@media (max-width: 600px) {
+    .spacer {
+        display: none !important;
+    }
+    
+    .flex.gap-4 {
+        gap: 0.5rem !important;
+    }
+}
