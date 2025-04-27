@@ -1,6 +1,5 @@
 import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
-
 /**
  * Quartz 4 Configuration
  *
@@ -9,45 +8,46 @@ import * as Plugin from "./quartz/plugins"
 const config: QuartzConfig = {
   configuration: {
     pageTitle: "Almas Kasymzhanov",
-    pageTitleSuffix: "",
+    pageTitleSuffix: " | Личный блог",
     enableSPA: true,
     enablePopovers: true,
     analytics: {
       provider: "plausible",
     },
-    locale: "en-US",
+    locale: "ru-RU", // Изменено на русский язык
     baseUrl: "https://almas.blog",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
+      isDark: false, // Устанавливает светлую тему по умолчанию
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "Schibsted Grotesk",
-        body: "Source Sans Pro",
+        header: "Montserrat", // Изменен шрифт заголовков
+        body: "Open Sans", // Изменен шрифт основного текста
         code: "IBM Plex Mono",
       },
       colors: {
         lightMode: {
-          light: "#faf8f8",
+          light: "#ffffff", // Белый фон
           lightgray: "#e5e5e5",
           gray: "#b8b8b8",
           darkgray: "#4e4e4e",
           dark: "#2b2b2b",
-          secondary: "#284b63",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
+          secondary: "#0066cc", // Синий для ссылок и акцентов
+          tertiary: "#4d9e91", // Приятный зеленый для дополнительных элементов
+          highlight: "rgba(0, 102, 204, 0.15)", // Голубая подсветка
           textHighlight: "#fff23688",
         },
         darkMode: {
-          light: "#161618",
+          light: "#1a1a1a", // Темный фон, но не слишком черный
           lightgray: "#393639",
           gray: "#646464",
           darkgray: "#d4d4d4",
-          dark: "#ebebec",
-          secondary: "#7b97aa",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
+          dark: "#f5f5f5", // Светлый текст
+          secondary: "#3d9dff", // Светло-синий для ссылок
+          tertiary: "#6bd6c8", // Светло-зеленый для дополнительных элементов
+          highlight: "rgba(61, 157, 255, 0.15)", // Синяя подсветка
           textHighlight: "#b3aa0288",
         },
       },
@@ -88,10 +88,9 @@ const config: QuartzConfig = {
       Plugin.Static(),
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
-      // Comment out CustomOgImages to speed up build time
+      // Раскомментировано для создания красивых изображений для соц. сетей
       Plugin.CustomOgImages(),
     ],
   },
 }
-
 export default config
