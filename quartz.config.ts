@@ -14,7 +14,7 @@ const config: QuartzConfig = {
     analytics: {
       provider: "plausible",
     },
-    locale: "ru-RU", // Изменено на русский язык
+    locale: "ru-RU",
     baseUrl: "https://almas.blog",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
@@ -22,32 +22,32 @@ const config: QuartzConfig = {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "Montserrat",
-        body: "Open Sans",
-        code: "IBM Plex Mono",
+        header: "Inter", // Использование шрифта Inter для заголовков как на slava.skp.kz
+        body: "Inter", // Использование шрифта Inter для основного текста
+        code: "JetBrains Mono", // Популярный моноширинный шрифт для кода
       },
       colors: {
         lightMode: {
           light: "#ffffff", // Чисто белый фон
-          lightgray: "#f0f0f0",
-          gray: "#c0c0c0",
-          darkgray: "#808080",
-          dark: "#000000", // Чисто черный текст
-          secondary: "#000000", // Черные ссылки
-          tertiary: "#000000", // Черные акценты
-          highlight: "rgba(0, 0, 0, 0.10)", // Светло-серая подсветка
-          textHighlight: "rgba(0, 0, 0, 0.10)",
+          lightgray: "#f5f5f5",
+          gray: "#e0e0e0",
+          darkgray: "#86868b",
+          dark: "#1d1d1f", // Почти черный текст, как на slava.skp.kz
+          secondary: "#1d1d1f", // Почти черный для ссылок
+          tertiary: "#1d1d1f", // Почти черный для акцентов
+          highlight: "rgba(0, 0, 0, 0.08)", // Светло-серая подсветка
+          textHighlight: "rgba(0, 0, 0, 0.08)",
         },
         darkMode: {
-          light: "#000000", // Чисто черный фон
-          lightgray: "#1a1a1a",
-          gray: "#404040",
-          darkgray: "#c0c0c0",
-          dark: "#ffffff", // Чисто белый текст
+          light: "#1d1d1f", // Темно-серый фон, как на slava.skp.kz
+          lightgray: "#2d2d2f",
+          gray: "#424245",
+          darkgray: "#86868b",
+          dark: "#ffffff", // Белый текст
           secondary: "#ffffff", // Белые ссылки
           tertiary: "#ffffff", // Белые акценты
-          highlight: "rgba(255, 255, 255, 0.10)", // Темно-серая подсветка
-          textHighlight: "rgba(255, 255, 255, 0.10)",
+          highlight: "rgba(255, 255, 255, 0.08)", // Темно-серая подсветка
+          textHighlight: "rgba(255, 255, 255, 0.08)",
         },
       },
     },
@@ -87,7 +87,6 @@ const config: QuartzConfig = {
       Plugin.Static(),
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
-      // Comment out CustomOgImages to speed up build time
       Plugin.CustomOgImages(),
     ],
   },
