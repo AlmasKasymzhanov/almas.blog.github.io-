@@ -1,5 +1,6 @@
 import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
+import { CustomCSS } from "./quartz/plugins/custom-css"
 /**
  * Quartz 4 Configuration
  *
@@ -71,6 +72,7 @@ const config: QuartzConfig = {
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
       Plugin.Description(),
       Plugin.Latex({ renderEngine: "katex" }),
+      CustomCSS(), // Добавлен плагин для пользовательских стилей CSS
     ],
     filters: [Plugin.RemoveDrafts()],
     emitters: [
