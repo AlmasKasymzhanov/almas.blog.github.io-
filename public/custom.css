@@ -1,60 +1,80 @@
-/* Скрываем граф на всех устройствах */
+/* Скрываем заголовок "index" */
+h1.page-title:contains("index"),
+article h1:first-of-type:contains("index"),
+.article-title:contains("index"),
+.index-heading,
+h1[data-slug="index"] {
+  font-size: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 0 !important;
+  position: absolute !important;
+  visibility: hidden !important;
+}
+
+/* Скрываем "Мой блог" */
+h1:contains("Мой блог"),
+h2:contains("Мой блог"),
+h3:contains("Мой блог"),
+article h1:contains("Мой блог"),
+div:has(> h1:contains("Мой блог")) {
+  display: none !important;
+}
+
+/* Скрываем граф и все связанные с ним элементы */
 .graph, 
 #graph-container, 
 .graph-container,
-h3:has(span:contains("Вид графа")),
-div:has(> h3:has(span:contains("Вид графа"))) {
-    display: none !important;
+div[id*="graph"],
+h3:contains("Вид графа"),
+h3:contains("Graph View"),
+div:has(> h3:contains("Вид графа")),
+div:has(> svg.graph),
+article div:not(.popover):has(> h3) + div,
+div:has(svg.graph),
+div:has(canvas.graph) {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 /* Изменяем футер */
 footer p {
-    font-size: 0;
+  font-size: 0;
 }
 footer p:after {
-    content: "© 2025 Разработка: Almas Kasymzhanov";
-    font-size: 16px;
-    display: block;
-    text-align: center;
+  content: "© 2025 Разработка: Almas Kasymzhanov";
+  font-size: 16px;
+  display: block;
+  text-align: center;
 }
 
 /* Стилизация мобильной версии */
 @media (max-width: 768px) {
-    /* Улучшаем внешний вид поиска */
-    #search-container {
-        background-color: rgba(32, 32, 34, 0.8) !important;
-        border-radius: 8px !important;
-        padding: 8px 12px !important;
-        margin: 0.5rem 0 !important;
-    }
-    
-    /* Выравнивание содержимого */
-    main {
-        padding: 0 1rem !important;
-    }
-    
-    article {
-        padding: 1rem 0 !important;
-    }
-    
-    /* Убираем лишние поля вокруг навигации */
-    .page-header {
-        margin-bottom: 1rem !important;
-    }
-    
-    /* Улучшаем отображение списка страниц */
-    .section-ul {
-        padding-left: 1rem !important;
-    }
-}
-
-/* Дополнительные улучшения для мобильной навигации */
-@media (max-width: 600px) {
-    .spacer {
-        display: none !important;
-    }
-    
-    .flex.gap-4 {
-        gap: 0.5rem !important;
-    }
+  /* Улучшаем внешний вид поиска */
+  #search-container {
+    background-color: rgba(32, 32, 34, 0.8) !important;
+    border-radius: 8px !important;
+    padding: 8px 12px !important;
+    margin: 0.5rem 0 !important;
+  }
+  
+  /* Выравнивание содержимого */
+  main {
+    padding: 0 1rem !important;
+  }
+  
+  article {
+    padding: 1rem 0 !important;
+  }
+  
+  /* Улучшаем отображение списка страниц */
+  .section-ul {
+    padding-left: 1rem !important;
+  }
 }
