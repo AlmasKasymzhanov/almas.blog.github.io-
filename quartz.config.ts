@@ -8,7 +8,7 @@ import * as Plugin from "./quartz/plugins"
 const config: QuartzConfig = {
   configuration: {
     pageTitle: "Almas Kasymzhanov",
-    pageTitleSuffix: " | Личный блог",
+    pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
     analytics: {
@@ -19,36 +19,35 @@ const config: QuartzConfig = {
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
-      isDark: false, // Устанавливает светлую тему по умолчанию
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "Montserrat", // Изменен шрифт заголовков
-        body: "Open Sans", // Изменен шрифт основного текста
+        header: "Montserrat",
+        body: "Open Sans",
         code: "IBM Plex Mono",
       },
       colors: {
         lightMode: {
-          light: "#ffffff", // Белый фон
-          lightgray: "#e5e5e5",
-          gray: "#b8b8b8",
-          darkgray: "#4e4e4e",
-          dark: "#2b2b2b",
-          secondary: "#0066cc", // Синий для ссылок и акцентов
-          tertiary: "#4d9e91", // Приятный зеленый для дополнительных элементов
-          highlight: "rgba(0, 102, 204, 0.15)", // Голубая подсветка
-          textHighlight: "#fff23688",
+          light: "#ffffff", // Чисто белый фон
+          lightgray: "#f0f0f0",
+          gray: "#c0c0c0",
+          darkgray: "#808080",
+          dark: "#000000", // Чисто черный текст
+          secondary: "#000000", // Черные ссылки
+          tertiary: "#000000", // Черные акценты
+          highlight: "rgba(0, 0, 0, 0.10)", // Светло-серая подсветка
+          textHighlight: "rgba(0, 0, 0, 0.10)",
         },
         darkMode: {
-          light: "#1a1a1a", // Темный фон, но не слишком черный
-          lightgray: "#393639",
-          gray: "#646464",
-          darkgray: "#d4d4d4",
-          dark: "#f5f5f5", // Светлый текст
-          secondary: "#3d9dff", // Светло-синий для ссылок
-          tertiary: "#6bd6c8", // Светло-зеленый для дополнительных элементов
-          highlight: "rgba(61, 157, 255, 0.15)", // Синяя подсветка
-          textHighlight: "#b3aa0288",
+          light: "#000000", // Чисто черный фон
+          lightgray: "#1a1a1a",
+          gray: "#404040",
+          darkgray: "#c0c0c0",
+          dark: "#ffffff", // Чисто белый текст
+          secondary: "#ffffff", // Белые ссылки
+          tertiary: "#ffffff", // Белые акценты
+          highlight: "rgba(255, 255, 255, 0.10)", // Темно-серая подсветка
+          textHighlight: "rgba(255, 255, 255, 0.10)",
         },
       },
     },
@@ -88,7 +87,7 @@ const config: QuartzConfig = {
       Plugin.Static(),
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
-      // Раскомментировано для создания красивых изображений для соц. сетей
+      // Comment out CustomOgImages to speed up build time
       Plugin.CustomOgImages(),
     ],
   },
